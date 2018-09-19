@@ -15,6 +15,7 @@
 		FD6245632152D7EE004F5C91 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6245622152D7EE004F5C91 /* ChatVC.swift */; };
 		FD6245652152D80C004F5C91 /* ChanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6245642152D80C004F5C91 /* ChanelVC.swift */; };
 		FD6245662152E01D004F5C91 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62455E2152D6BA004F5C91 /* SWRevealViewController.m */; };
+		FD6245682152E927004F5C91 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6245672152E927004F5C91 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FD62455E2152D6BA004F5C91 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		FD6245622152D7EE004F5C91 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		FD6245642152D80C004F5C91 /* ChanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChanelVC.swift; sourceTree = "<group>"; };
+		FD6245672152E927004F5C91 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		FD6245602152D77E004F5C91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FD6245672152E927004F5C91 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				FD6245662152E01D004F5C91 /* SWRevealViewController.m in Sources */,
 				FD6245632152D7EE004F5C91 /* ChatVC.swift in Sources */,
+				FD6245682152E927004F5C91 /* GradientView.swift in Sources */,
 				FD6245652152D80C004F5C91 /* ChanelVC.swift in Sources */,
 				FD62454A2152D5ED004F5C91 /* AppDelegate.swift in Sources */,
 			);
