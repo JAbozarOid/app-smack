@@ -9,14 +9,21 @@
 import UIKit
 
 class ChanelVC: UIViewController {
-
+    
+    //Outlets - > login button title change duration in app
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // this lines of code show how much of SWRevealViewControll does shown - > the width of
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60 // this means all width except 60 point
     }
-
-   
-
+    
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+    }
+    
+    
+    
 }
