@@ -13,6 +13,9 @@ class ChanelVC: UIViewController {
     //Outlets - > login button title change duration in app
     @IBOutlet weak var loginBtn: UIButton!
     
+    // when we are in create account page when we want to to close the view we want to back the channel page and not in loginVC so we create an action
+    @IBAction func prepareForUnwind(segue: UIStoryboard){}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
