@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DAB8DC8907D45E116E0E642A /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F3C7A0AAADF084292AA46B /* Pods_Smack.framework */; };
+		FD0752A321576DE8005D0953 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0752A221576DE8005D0953 /* AuthService.swift */; };
+		FD0752A521579909005D0953 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0752A421579909005D0953 /* RoundedButton.swift */; };
 		FD62454A2152D5ED004F5C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6245492152D5ED004F5C91 /* AppDelegate.swift */; };
 		FD62454F2152D5ED004F5C91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD62454D2152D5ED004F5C91 /* Main.storyboard */; };
 		FD6245512152D5ED004F5C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6245502152D5ED004F5C91 /* Assets.xcassets */; };
@@ -18,13 +20,15 @@
 		FD6245682152E927004F5C91 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6245672152E927004F5C91 /* GradientView.swift */; };
 		FD62456B2153A106004F5C91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62456A2153A106004F5C91 /* Constants.swift */; };
 		FD62456D2153ABE1004F5C91 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62456C2153ABE1004F5C91 /* LoginVC.swift */; };
-		FD62456F2153AF9C004F5C91 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62456E2153AF9C004F5C91 /* CreateAccount.swift */; };
+		FD62456F2153AF9C004F5C91 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62456E2153AF9C004F5C91 /* CreateAccountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58A218D7429F9D5DBC922CD8 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		98F3C7A0AAADF084292AA46B /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6DC9F3A309FAF7389B1279 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
+		FD0752A221576DE8005D0953 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FD0752A421579909005D0953 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		FD6245462152D5ED004F5C91 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6245492152D5ED004F5C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD62454E2152D5ED004F5C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		FD6245672152E927004F5C91 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		FD62456A2153A106004F5C91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FD62456C2153ABE1004F5C91 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		FD62456E2153AF9C004F5C91 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		FD62456E2153AF9C004F5C91 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD0752A121576DBC005D0953 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD0752A221576DE8005D0953 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FD62453D2152D5ED004F5C91 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 		FD6245482152D5ED004F5C91 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				FD0752A121576DBC005D0953 /* Services */,
 				FD6245692153A0E8004F5C91 /* Utilities */,
 				FD6245612152D784004F5C91 /* Model */,
 				FD6245602152D77E004F5C91 /* View */,
@@ -122,7 +135,7 @@
 				FD6245622152D7EE004F5C91 /* ChatVC.swift */,
 				FD6245642152D80C004F5C91 /* ChanelVC.swift */,
 				FD62456C2153ABE1004F5C91 /* LoginVC.swift */,
-				FD62456E2153AF9C004F5C91 /* CreateAccount.swift */,
+				FD62456E2153AF9C004F5C91 /* CreateAccountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6245672152E927004F5C91 /* GradientView.swift */,
+				FD0752A421579909005D0953 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,13 +285,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6245662152E01D004F5C91 /* SWRevealViewController.m in Sources */,
+				FD0752A521579909005D0953 /* RoundedButton.swift in Sources */,
 				FD6245632152D7EE004F5C91 /* ChatVC.swift in Sources */,
 				FD62456D2153ABE1004F5C91 /* LoginVC.swift in Sources */,
+				FD0752A321576DE8005D0953 /* AuthService.swift in Sources */,
 				FD6245682152E927004F5C91 /* GradientView.swift in Sources */,
 				FD6245652152D80C004F5C91 /* ChanelVC.swift in Sources */,
 				FD62454A2152D5ED004F5C91 /* AppDelegate.swift in Sources */,
 				FD62456B2153A106004F5C91 /* Constants.swift in Sources */,
-				FD62456F2153AF9C004F5C91 /* CreateAccount.swift in Sources */,
+				FD62456F2153AF9C004F5C91 /* CreateAccountVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
