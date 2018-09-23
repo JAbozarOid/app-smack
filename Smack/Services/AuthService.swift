@@ -106,12 +106,45 @@ class AuthService {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
-            
-            
         }
     }
     
-    
+    func createUser(name: String,email: String,avatarName: String,avatarColor: String,completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "name": name,
+            "email":lowerCaseEmail,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ]
+        
+        // header for this web request is a little bit different we have both "content-type" and "token"
+        
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADERWithAUTH).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                let json = try! JSON(data: data)
+                
+                let id = json["_id"].stringValue // string value don't let if the valuse is nill the app doesn't crash
+                let name = json["name"].stringValue
+                let email = json["email"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let avatarColor = json["avatarColor"].stringValue
+                
+                UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
+                
+                completion(true)
+                
+            }else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
     
     
     
