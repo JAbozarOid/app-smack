@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire //Alamofire is a library for webrequest
+import SwiftyJSON // for working with parsing json responses
 
 
 // this class is a singleton class and it should lounch once at the app run
@@ -54,17 +55,13 @@ class AuthService {
         
         let lowerCaseEmail = email.lowercased()
         
-        let header = [
-            "Content-Type" : "application/json; charset=utf-8"
-        ]
-        
         let body: [String: Any] = [
             "email":lowerCaseEmail,
             "password":password
         ]
         
         // for most particular respose is a json but for this case the respose is a string so we select string response
-        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString
             {(response) in
                 
                 if response.result.error == nil {
@@ -74,6 +71,44 @@ class AuthService {
                     debugPrint(response.result.error as Any)
                 }
             }
+    }
+    
+    // create a method to handle login api - > in this api we pass email and password as body request and header content type with application json
+    func loginUser(email: String,password: String,completion: @escaping CompletionHandler) {
+        
+        // web request is a async which means when we send a request we don't know when the response is comeback
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String: Any] = [
+            "email":lowerCaseEmail,
+            "password":password
+        ]
+        
+        // for most particular respose is a json but for this case the respose is a string so we select string response
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON {
+            (response) in
+            
+            
+            // if there is n't any errors -> successfull response
+            if response.result.error == nil {
+                
+                //using swifty json for parsing json response
+                guard let data = response.data else {return}
+                let json = try! JSON(data: data) // *** with try! force unwrap the result
+                self.userEmail = json["user"].stringValue
+                self.authToken = json["token"].stringValue
+                
+                self.isLoggedIn=true
+                completion(true)
+                
+            }else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+            
+            
+        }
     }
     
     
