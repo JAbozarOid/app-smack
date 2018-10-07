@@ -22,8 +22,17 @@ class CreateAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
+    // when the user select the avatar image it should be back to this page and set the selected avatar in imageview
+    override func viewDidAppear(_ animated: Bool) {
+        // if the avatar selected by user that means the string of avatar name is not empty
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
