@@ -126,16 +126,7 @@ class AuthService {
             
             if response.result.error == nil {
                 guard let data = response.data else {return}
-                let json = try! JSON(data: data)
-                
-                let id = json["_id"].stringValue // string value don't let if the valuse is nill the app doesn't crash
-                let name = json["name"].stringValue
-                let email = json["email"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let avatarColor = json["avatarColor"].stringValue
-                
-                UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
-                
+                self.setUserInfo(data: data)
                 completion(true)
                 
             }else {
@@ -147,7 +138,35 @@ class AuthService {
     }
     
     
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        
+        // we just need header and no body
+        Alamofire.request("\(URL_USER_ADD)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADERWithAUTH).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else {return}
+                self.setUserInfo(data: data)
+                completion(true)
+                
+            }else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+            
+        }
+        
+    }
     
+    func setUserInfo(data: Data) {
+        let json = try! JSON(data: data)
+        let id = json["_id"].stringValue // string value don't let if the valuse is nill the app doesn't crash
+        let name = json["name"].stringValue
+        let email = json["email"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let avatarColor = json["avatarColor"].stringValue
+        
+        UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
+    }
     
     
     

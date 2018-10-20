@@ -19,6 +19,8 @@ let BASE_URL = "https://app-chat-ios.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
+let URL_GET_CHANNELS = "\(BASE_URL)channel/"
 
 // colors
 let smackPurplePlaceholder = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
